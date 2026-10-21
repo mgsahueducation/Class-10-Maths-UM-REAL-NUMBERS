@@ -1,3 +1,3 @@
 کیز: ← → پوسٹر بدلیں · Space دوبارہ چلائیں · S ایک قدم · H بٹن چھپائیں (ریکارڈنگ کے لیے صاف اسکرین)
 
-MG Sahoo Education Blog
+MG Sahu Education Blog
