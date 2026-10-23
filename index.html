@@ -6,49 +6,39 @@
 <title>حقیقی اعداد: انٹرایکٹو پوسٹر</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Fraunces:opsz,wght@9..144,800&display=swap" rel="stylesheet">
 <style>
-/* Jameel Noori Nastaleeq is used if installed on your computer; otherwise Noto Nastaliq Urdu loads online */
-:root{--urdu:'Jameel Noori Nastaleeq','Jameel Noori Nastaleeq Kasheeda','Noto Nastaliq Urdu','Noto Naskh Arabic',serif;
---paper:#f4f6f1;--grid:#dfe5db;--ink:#14213d;--soft:#4a5673;--gold:#f2a900;--teal:#12877a;--coral:#e4572e;--card:#fff}
+:root{--f:'Jameel Noori Nastaleeq','Jameel Noori Nastaleeq Kasheeda','Noto Nastaliq Urdu','Noto Naskh Arabic',serif;--lh:2.1;--hl:1.8;--mf:Fraunces,Georgia,serif;--paper:#f4f6f1;--grid:#dfe5db;--ink:#14213d;--soft:#4a5673;--gold:#f2a900;--teal:#12877a;--coral:#e4572e;--card:#fff}
 @media (prefers-color-scheme:dark){:root{--paper:#0f1a2e;--grid:#1a2742;--ink:#f1f4ee;--soft:#a9b4cc;--card:#17243d}}
 *{box-sizing:border-box;margin:0}
 html,body{height:100%}
-body{font-family:var(--urdu);line-height:2.1;color:var(--ink);background:var(--paper);padding-bottom:64px;
+body{font-family:var(--f);line-height:var(--lh);color:var(--ink);background:var(--paper);padding-bottom:64px;
 background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;overflow-x:hidden}
 nav{display:flex;gap:8px;align-items:center;padding:12px 20px;flex-wrap:wrap}
-nav button,.ctl button{font:inherit;font-size:1rem;border:2px solid var(--ink);background:var(--card);color:var(--ink);padding:2px 16px;border-radius:10px;cursor:pointer}
+nav button,.ctl button{font:inherit;font-size:1rem;font-weight:700;border:2px solid var(--ink);background:var(--card);color:var(--ink);padding:2px 14px;border-radius:10px;cursor:pointer}
 nav button.on{background:var(--ink);color:var(--paper)}
 button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .poster{display:none;min-height:calc(100vh - 130px);padding:10px 28px 40px;grid-template-columns:minmax(260px,5fr) 7fr;gap:36px;align-items:start}
 .poster.on{display:grid}
-h1{font-weight:700;font-size:clamp(1.9rem,4.4vw,3.4rem);line-height:1.8;margin-bottom:4px}
+h1{font-weight:800;font-size:clamp(1.8rem,4.2vw,3.2rem);line-height:var(--hl);margin-bottom:6px}
 .tag{font-size:clamp(1.1rem,2vw,1.5rem);color:var(--teal);margin-bottom:18px}
 .facts{list-style:none;padding:0;display:grid;gap:10px}
-.facts li{background:var(--card);border-inline-start:6px solid var(--gold);padding:6px 16px;border-radius:12px 4px 4px 12px;font-size:1.12rem;line-height:2.1}
+.facts li{background:var(--card);border-inline-start:6px solid var(--gold);padding:6px 16px;border-radius:12px 4px 4px 12px;font-size:1.08rem}
+[dir=ltr] .facts li{border-radius:4px 12px 12px 4px}
 .ctl{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
-.ctl label{font-family:var(--urdu);display:flex;gap:6px;align-items:center;direction:ltr;font-weight:700}
+.ctl label{display:flex;gap:6px;align-items:center;direction:ltr;font-weight:700}
 .ctl input{width:92px;font:inherit;font-weight:700;padding:3px 9px;border:2px solid var(--ink);border-radius:10px;background:var(--card);color:var(--ink);direction:ltr}
 .ctl .go{background:var(--gold);color:#14213d}
 .stage{display:grid;gap:12px}
-.stage>div{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:8px 20px;font-size:clamp(1.1rem,2vw,1.45rem);line-height:2.2;opacity:0;transform:translateY(14px) scale(.98);transition:opacity .5s,transform .5s;pointer-events:none}
+.stage>div{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:8px 20px;font-size:clamp(1.1rem,2vw,1.4rem);opacity:0;transform:translateY(14px) scale(.98);transition:opacity .5s,transform .5s;pointer-events:none}
 .stage>div.on{opacity:1;transform:none;pointer-events:auto}
 .stage>div.key{background:var(--gold);color:#14213d;font-weight:700;border-color:#14213d}
-.stage>div.result{background:var(--ink);color:var(--paper);font-weight:700;font-size:clamp(1.3rem,3vw,2rem)}
+.stage>div.result{background:var(--ink);color:var(--paper);font-weight:800;font-size:clamp(1.25rem,2.8vw,1.9rem)}
 .stage>div.result b{color:var(--gold)}
 .stage>div.bad{background:var(--coral);color:#fff}
-.m{direction:ltr;unicode-bidi:isolate;display:inline-block;font-family:Fraunces,Georgia,serif;font-weight:800;line-height:1.5}
+.m{direction:ltr;unicode-bidi:isolate;display:inline-block;font-family:var(--mf);font-weight:800;line-height:1.5}
 b.hl{color:var(--coral)}b.zero{color:var(--teal);background:rgba(18,135,122,.15);padding:0 6px;border-radius:6px}
-.bar{display:flex;direction:ltr;gap:3px;margin-top:6px;height:16px}
-.bar i{background:var(--teal);border-radius:4px;transform-origin:left;transform:scaleX(0);transition:transform .6s}
-.on .bar i{transform:scaleX(1)}
-.bar i.rem{background:repeating-linear-gradient(45deg,var(--coral),var(--coral) 4px,transparent 4px,transparent 8px)}
-.chip{display:inline-block;direction:ltr;unicode-bidi:isolate;background:var(--gold);color:#14213d;font-family:Fraunces,Georgia,serif;font-weight:800;border-radius:8px;padding:0 10px;margin:0 2px;line-height:1.6}
-.dig{direction:ltr;font-family:Fraunces,Georgia,serif;font-size:1.4em;word-break:break-all;letter-spacing:2px;line-height:1.5}
-.dig span{display:inline-block;opacity:0}
-.on .dig span{animation:pop .35s forwards}
-.dig .rp{color:var(--coral);text-decoration:overline}
-@keyframes pop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+.chip{display:inline-block;direction:ltr;unicode-bidi:isolate;background:var(--gold);color:#14213d;font-family:var(--mf);font-weight:800;border-radius:8px;padding:0 10px;margin:0 2px;line-height:1.6}
 small.hint{display:block;color:var(--soft);padding:0 28px 20px}
-.brand{position:fixed;left:0;right:0;bottom:0;z-index:9;text-align:center;direction:ltr;padding:12px;background:var(--ink);color:var(--paper);font-family:Fraunces,Georgia,serif;font-weight:800;font-size:clamp(1rem,2.4vw,1.4rem);border-top:4px solid var(--gold);line-height:1.5}
+.brand{position:fixed;left:0;right:0;bottom:0;z-index:9;text-align:center;direction:ltr;padding:12px;background:var(--ink);color:var(--paper);font-family:var(--mf);font-weight:800;font-size:clamp(1rem,2.4vw,1.4rem);border-top:4px solid var(--gold);line-height:1.5}
 body.clean nav,body.clean .ctl,body.clean small.hint{display:none}
 body.clean .poster{min-height:100vh;padding-top:30px}
 @media(max-width:820px){.poster.on{grid-template-columns:1fr}}
@@ -60,106 +50,117 @@ body.clean .poster{min-height:100vh;padding-top:30px}
 <main id="main"></main>
 <small class="hint">کیز: ← → پوسٹر بدلیں · Space دوبارہ چلائیں · S ایک قدم · H بٹن چھپائیں (ریکارڈنگ کے لیے صاف اسکرین)</small>
 <div class="brand">MG Sahoo Education Blog</div>
-
 <script>
 const $=(s,r=document)=>r.querySelector(s);
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const gcd=(a,b)=>b?gcd(b,a%b):a;
 const M=h=>`<span class="m">${h}</span>`;
 function factor(n){const m={};for(let p=2;p*p<=n;p++)while(n%p==0){m[p]=(m[p]||0)+1;n/=p}if(n>1)m[n]=(m[n]||0)+1;return m}
 function fmt(m){const k=Object.keys(m).map(Number).sort((a,b)=>a-b);return k.length?k.map(p=>p+(m[p]>1?'<sup>'+m[p]+'</sup>':'')).join(' × '):'1'}
 const val=m=>Object.keys(m).reduce((t,p)=>t*Math.pow(+p,m[p]),1);
-const isPrime=n=>{const f=factor(n);return n>1&&Object.keys(f).length==1&&f[n]==1};
+const isPrime=n=>{if(n<2)return false;const f=factor(n);return Object.keys(f).length==1&&f[n]==1};
+const okInt=(x,lo,hi)=>Number.isInteger(x)&&x>=lo&&x<=hi;
+function hl(nums){const F=nums.map(factor),H={},L={};
+ new Set(F.flatMap(f=>Object.keys(f))).forEach(p=>{const es=F.map(f=>f[p]||0);L[p]=Math.max(...es);const mn=Math.min(...es);if(mn>0)H[p]=mn});
+ return{F,H,L,h:val(H),l:val(L)}}
+const chip=(n,f)=>`${M(n+' =')} <span class="chip">${fmt(f)}</span>`;
+const hv=(T,R)=>`${T.s.hcfL}<br>${M(`= <b class="zero">${fmt(R.H)}</b> = <b>${R.h}</b>`)}`;
+const lv=(T,R)=>`${T.s.lcmL}<br>${M(`= <b class="zero">${fmt(R.L)}</b> = <b>${R.l}</b>`)}`;
+const res=(T,R)=>`§${T.hcf} ${M('= '+R.h)} · ${T.lcm} ${M('= '+R.l)}`;
 
-const POSTERS=[
-{name:'1 · تقسیمی کلیہ',title:'اقلیدس کا تقسیمی کلیہ',tag:'تقسیم کرتے جائیں جب تک باقی صفر نہ ہو جائے۔',
-key:`${M('a = bq + r, 0 ≤ r &lt; b')} آخری غیر صفر مقسوم علیہ ہی عاداعظم (HCF) ہوتا ہے۔`,
-facts:[`دو مثبت صحیح اعداد a اور b کے لیے: ${M('a = bq + r')} جہاں ${M('0 ≤ r &lt; b')}`,'اقلیدس کا الگورتھم: تقسیم کرتے رہیں جب تک باقی 0 نہ ہو۔ آخری مقسوم علیہ عاداعظم (HCF) ہے۔','ہر صحیح عدد 2q یا 2q+1 ہوتا ہے؛ مربع 3m یا 3m+1؛ مکعب 9m، 9m+1 یا 9m+8۔','ہر قدم لکھیں، کیونکہ نمبر ہر قدم پر ملتے ہیں۔'],
-inputs:[['a',404],['b',96]],
-build([a,b]){let B=Math.max(a,b),S=Math.min(a,b);if(S<1)return['!براہِ کرم مثبت اعداد درج کریں۔'];const o=[];
-while(S){const q=Math.floor(B/S),r=B%S;let bar='';if(q<=16){for(let i=0;i<q;i++)bar+=`<i style="flex:${S}"></i>`;if(r)bar+=`<i class="rem" style="flex:${r}"></i>`}
-o.push(`${M(`${B} = ${S} × ${q} + <b class="${r?'hl':'zero'}">${r}</b>`)}<div class="bar">${bar}</div>`);B=S;S=r}
-o.push(`§عاداعظم (HCF) ${M(`(${a}, ${b}) = <b>${B}</b>`)}`);return o}},
-{name:'2 · بنیادی مسئلہ',title:'علمِ حساب کا بنیادی مسئلہ',tag:'ہر مرکب عدد کی مفرد اعداد میں ایک ہی منفرد شناخت ہے۔',
-key:`${M('HCF × LCM = a × b')} (صرف دو اعداد کے لیے)۔`,
-facts:['ہر مرکب عدد مفرد اعداد کا حاصلِ ضرب ہوتا ہے اور یہ تجزیہ منفرد ہے (ترتیب کے علاوہ)۔','عاداعظم (HCF) = مشترک مفرد اعداد کی سب سے چھوٹی طاقتیں۔','ذواضعافِ اقل (LCM) = تمام مفرد اعداد کی سب سے بڑی طاقتیں۔',`${M('HCF × LCM = a × b')} (صرف دو اعداد کے لیے)۔`,`${M('6<sup>n</sup>')} میں 5 جزو نہیں، اس لیے یہ کبھی 0 پر ختم نہیں ہوتا۔`],
-inputs:[['a',12],['b',18]],
-build([a,b]){if(a<2||b<2||a>1e6||b>1e6)return['!2 سے 1,000,000 تک کے اعداد درج کریں۔'];const A=factor(a),B=factor(b),H={},L={};
-for(const p in A){if(B[p])H[p]=Math.min(A[p],B[p]);L[p]=Math.max(A[p],B[p]||0)}for(const p in B)if(!L[p])L[p]=B[p];
-const h=val(H),l=val(L);
-return[`${M(a+' =')} <span class="chip">${fmt(A)}</span>`,`${M(b+' =')} <span class="chip">${fmt(B)}</span>`,
-`عاداعظم: مشترک مفرد اعداد کی سب سے چھوٹی طاقتیں<br>${M(`= <b class="zero">${fmt(H)}</b> = <b>${h}</b>`)}`,
-`ذواضعافِ اقل: تمام مفرد اعداد کی سب سے بڑی طاقتیں<br>${M(`= <b class="zero">${fmt(L)}</b> = <b>${l}</b>`)}`,
-`تصدیق: ${M(`${h} × ${l} = ${h*l} = ${a} × ${b}`)}`,
-`§عاداعظم = <b>${h}</b> · ذواضعافِ اقل = <b>${l}</b>`]}},
-{name:'3 · غیر ناطق اعداد',title:'غیر ناطق اعداد',tag:'تضاد سے ثبوت، قدم بہ قدم۔',
-key:`اگر مفرد عدد p، ${M('a<sup>2</sup>')} کو تقسیم کرے تو p، a کو بھی تقسیم کرتا ہے۔`,
-facts:[`اگر مفرد عدد p، ${M('a<sup>2</sup>')} کو تقسیم کرے تو p، a کو بھی تقسیم کرتا ہے۔`,`${M('√2, √3, √5')} کو غیر ناطق ثابت کریں؛ پھر ${M('3 + 2√5, 5 − √3, 1/√2')} بھی۔`,'ناطق ± غیر ناطق = غیر ناطق۔ غیر صفر ناطق × غیر ناطق = غیر ناطق۔','تضاد کا جملہ لازماً لکھیں۔'],
-inputs:[['p',2]],
-build([p]){if(!isPrime(p))return['!کوئی مفرد عدد درج کریں (2، 3، 5، 7، 11…)۔'];
-const n=34,x=BigInt(p)*10n**BigInt(2*n);let lo=0n,hi=10n**BigInt(n+2);while(lo<hi){const m=(lo+hi+1n)/2n;if(m*m<=x)lo=m;else hi=m-1n}
-const s=lo.toString();const dg=(s[0]+'.'+s.slice(1)).split('').map((c,i)=>`<span style="animation-delay:${i*70}ms">${c}</span>`).join('');
-const r=`√${p}`;
-return[`<b>قدم 1۔</b> فرض کریں ${M(r)} ناطق ہے: ${M(`${r} = a/b`)}، جہاں a اور b ہم اولیٰ (co-prime) ہیں، ${M('b ≠ 0')}۔`,
-`<b>قدم 2۔</b> دونوں طرف مربع لیں: ${M(`a<sup>2</sup> = ${p}b<sup>2</sup>`)}۔`,
-`<b>قدم 3۔</b> ${p}، ${M('a<sup>2</sup>')} کو تقسیم کرتا ہے، لہٰذا <b class="zero">${p}، a کو تقسیم کرتا ہے</b>۔ لکھیں ${M(`a = ${p}c`)}۔`,
+const T={keyLabel:'اہم نکتہ:',run:'چلائیں',step:'اگلا قدم',reset:'دوبارہ',hcf:'عاداعظم',lcm:'ذواضعافِ اقل',
+s:{err4:'عدد 4 سے 10,000,000 کے درمیان درج کریں۔',prime:n=>`${n} مفرد ہے۔ کوئی مرکب عدد درج کریں۔`,
+tree:'فیکٹر ٹری بنائیں: ہر بار سب سے چھوٹے مفرد عدد سے تقسیم کریں۔',primes:'مفرد اجزائے ضربی:',unique:'یہ تجزیہ منفرد ہے، صرف مفرد اعداد کی ترتیب بدل سکتی ہے۔',
+err2:'اعداد 2 سے 1,000,000 کے درمیان درج کریں۔',err3:'اعداد 2 سے 10,000 کے درمیان درج کریں۔',
+hcfL:'عاداعظم: مشترک مفرد اعداد کی سب سے چھوٹی طاقتیں',lcmL:'ذواضعافِ اقل: تمام مفرد اعداد کی سب سے بڑی طاقتیں',chk:'تصدیق:',viaH:'عاداعظم کے ذریعے:',
+prodNot:'غور کریں: تینوں اعداد کا حاصلِ ضرب HCF × LCM کے برابر نہیں ہے۔',prodEq:'یہاں اتفاقاً برابر ہیں، لیکن عام طور پر ایسا نہیں ہوتا۔',
+zeroIdea:'جو عدد 0 پر ختم ہو وہ 10 = 2 × 5 سے تقسیم ہوتا ہے، اس لیے 2 اور 5 دونوں مفرد جزو ہونے چاہییں۔',onlyP:'تجزیے میں صرف یہ مفرد اعداد ہیں:',uniq:'انفرادیت کی وجہ سے کوئی اور مفرد عدد نہیں ہے۔',
+can:b=>`${M(b+'<sup>n</sup>')} 0 پر ختم ہو سکتا ہے، کیونکہ ${b} کے مفرد اجزا میں 2 اور 5 دونوں ہیں۔`,never:(b,m)=>`مفرد عدد ${m} موجود نہیں، اس لیے ${M(b+'<sup>n</sup>')} کبھی 0 پر ختم نہیں ہوتا۔`,
+prErr:'کوئی مفرد عدد درج کریں (2، 3، 5، 7، 11…)۔',
+irr:p=>[`<b>قدم 1۔</b> فرض کریں ${M('√'+p)} ناطق ہے: ${M(`√${p} = a/b`)}، جہاں a اور b ہم اولیٰ ہیں، ${M('b ≠ 0')}۔`,
+`<b>قدم 2۔</b> لہٰذا ${M(`b√${p} = a`)}۔ مربع لیں: ${M(`${p}b<sup>2</sup> = a<sup>2</sup>`)}۔`,
+`<b>قدم 3۔</b> ${p}، ${M('a<sup>2</sup>')} کو تقسیم کرتا ہے، اس لیے مسئلہ 1.2 سے <b class="zero">${p}، a کو تقسیم کرتا ہے</b>۔ لکھیں ${M(`a = ${p}c`)}۔`,
 `<b>قدم 4۔</b> تب ${M(`${p*p}c<sup>2</sup> = ${p}b<sup>2</sup>`)}، یعنی ${M(`b<sup>2</sup> = ${p}c<sup>2</sup>`)}۔`,
 `<b>قدم 5۔</b> لہٰذا ${p}، ${M('b<sup>2</sup>')} کو تقسیم کرتا ہے، پس <b class="zero">${p}، b کو تقسیم کرتا ہے</b>۔`,
-`<b>قدم 6۔</b> ${p}، a اور b دونوں کو تقسیم کرتا ہے۔ <b class="hl">یہ ہمارے اس فرض کے خلاف ہے کہ a اور b ہم اولیٰ ہیں۔</b>`,
-`§لہٰذا ${M(r)} <b>غیر ناطق</b> ہے۔`,
-`اس کے اعشاری ہندسے نہ ختم ہوتے ہیں نہ دہراتے ہیں:<div class="dig">${dg}…</div>`]}},
-{name:'4 · اعشاری پھیلاؤ',title:'اعشاری پھیلاؤ',tag:'نسب نما دیکھیں، اعشاریہ کی پیش گوئی کریں۔',
-key:`کم ترین صورت میں ${M('p/q')} صرف اس وقت ختم ہوتا ہے جب ${M('q = 2<sup>m</sup> × 5<sup>n</sup>')} ہو۔`,
-facts:['ناطق اعداد: اعشاریہ یا تو ختم ہو جاتا ہے، یا غیر ختم ہونے والا دہرانے والا ہوتا ہے۔','غیر ناطق اعداد: اعشاریہ غیر ختم ہونے والا اور غیر دہرانے والا ہوتا ہے۔',`کم ترین صورت میں ${M('p/q')} صرف تب ختم ہوتا ہے جب ${M('q = 2<sup>m</sup> × 5<sup>n</sup>')}۔`,'ہمیشہ پہلے کسر کو کم ترین صورت میں لکھیں۔'],
-inputs:[['p',13],['q',3125]],
-build([p,q]){if(p<1||q<2||q>1e6)return['!p ≥ 1 اور q کے لیے 2 سے 1,000,000 تک کا عدد درج کریں۔'];
-const g=gcd(p,q),P=p/g,Q=q/g,F=factor(Q),bad=Object.keys(F).filter(k=>k!=2&&k!=5),ok=!bad.length;
-const ip=Math.floor(P/Q);let r=P%Q;const seen={},dg=[];
-while(r&&!(r in seen)&&dg.length<60){seen[r]=dg.length;r*=10;dg.push(Math.floor(r/Q));r%=Q}
-const st=r&&(r in seen)?seen[r]:-1;
-const spans=dg.map((c,i)=>`<span class="${st>=0&&i>=st?'rp':''}" style="animation-delay:${i*90}ms">${c}</span>`).join('');
-return[`کم ترین صورت: ${M(`${p}/${q}`)}${g>1?` = <b>${M(P+'/'+Q)}</b> (${g} سے تقسیم کیا)`:' (پہلے ہی کم ترین ہے)'}`,
-`نسب نما: ${M(Q+' =')} <span class="chip">${fmt(F)}</span>`,
-ok?`q میں صرف 2 اور/یا 5 ہیں، اس لیے یہ <b class="zero">ختم ہو جاتا ہے</b>۔`:`مفرد جزو <b class="hl">${bad[0]}</b> نہ 2 ہے نہ 5، اس لیے یہ <b class="hl">دہراتا ہے</b>۔`,
-`${M(`${P}/${Q}`)} =<div class="dig">${ip}.${spans}${!ok&&st<0?'…':''}</div>`,
-`§${ok?'ختم ہونے والا اعشاریہ':'غیر ختم ہونے والا دہرانے والا اعشاریہ'}`]}},
-{name:'5 · a + b√c',title:'a + b√c قسم کے سوالات',tag:'جذر کو الگ کریں، تضاد دیکھیں۔',
-key:`${M('a + b√c')} کو غیر ناطق ثابت کرنے کے لیے اسے ناطق فرض کریں اور ${M('√c')} کو الگ کریں۔ ${M('√c')} ناطق بنے گا، جو تضاد ہے۔`,
-facts:[`مثالیں: ${M('3 + 2√5, 5 − √3, 7√2, 4 − 3√7')}۔`,`پورے عدد کو ناطق فرض کریں: ${M('a + b√c = r')}۔`,`جذر کو الگ کریں: ${M('√c = (r − a)/b')}، جو ناطق ہے۔`,`لیکن ${M('√c')} غیر ناطق ہے (پہلے ثابت ہو چکا)، یہ <b>تضاد</b> ہے۔ اسے ہمیشہ لکھیں۔`],
-inputs:[['a',3],['b',2],['c',5]],
-build([a,b,c]){if(!isPrime(c)||!b||!Number.isInteger(a)||!Number.isInteger(b))return['!c مفرد عدد اور b ≠ 0 درج کریں۔ منفی کے لیے b منفی لکھیں (5 − √3 کے لیے a=5، b=-1، c=3)۔'];
-const ab=Math.abs(b),E=(a?a+(b<0?' − ':' + '):(b<0?'−':''))+(ab==1?'':ab)+'√'+c;
-const ra=a?`r ${a<0?'+':'−'} ${Math.abs(a)}`:'r',bt=(b==1?'':b==-1?'−':b)+'√'+c,bd=b<0?`(${b})`:b;
-return[`<b>قدم 1۔</b> فرض کریں <span class="chip">${E}</span> ناطق ہے۔ ${M(E+' = r')}، جہاں r ناطق ہے۔`,
-`<b>قدم 2۔</b> جذر کو الگ کریں: ${M(`${bt} = ${ra}`)}، لہٰذا <b class="zero">${M(`√${c} = (${ra}) / ${bd}`)}</b>۔`,
-`<b>قدم 3۔</b> r، a اور b ناطق ہیں اور ${M('b ≠ 0')}، اس لیے ${M(`(${ra}) / ${bd}`)} ناطق ہے۔ لہٰذا ${M('√'+c)} ناطق ہے۔`,
-`<b>قدم 4۔</b> لیکن ${M('√'+c)} غیر ناطق ہے (پہلے ثابت ہو چکا)۔ <b class="hl">یہ ہمارے اس فرض کے خلاف ہے کہ ${M(E)} ناطق ہے۔</b>`,
-`§لہٰذا ${M(E)} <b>غیر ناطق</b> ہے۔`]}}
-];
+`<b>قدم 6۔</b> ${p}، a اور b دونوں کو تقسیم کرتا ہے۔ <b class="hl">یہ اس حقیقت کے خلاف ہے کہ a اور b ہم اولیٰ ہیں۔</b>`],
+irrRes:p=>`لہٰذا ${M('√'+p)} <b>غیر ناطق</b> ہے۔`,
+eErr:'c مفرد عدد اور b ≠ 0 درج کریں۔ منفی کے لیے b منفی لکھیں (5 − √3 کے لیے a=5، b=-1، c=3)۔ 3√2 کے لیے a=0۔',
+e1:E=>`<b>قدم 1۔</b> فرض کریں <span class="chip">${E}</span> ناطق ہے: ${M(E+' = r')}، جہاں r ناطق ہے۔`,
+e2:(bt,ra,c,bd)=>`<b>قدم 2۔</b> جذر کو الگ کریں: ${M(`${bt} = ${ra}`)}، لہٰذا <b class="zero">${M(`√${c} = (${ra}) / ${bd}`)}</b>۔`,
+e3:(ra,bd,c)=>`<b>قدم 3۔</b> r، a اور b ناطق ہیں اور ${M('b ≠ 0')}، اس لیے ${M(`(${ra}) / ${bd}`)} ناطق ہے۔ لہٰذا ${M('√'+c)} ناطق ہے۔`,
+e4:(E,c)=>`<b>قدم 4۔</b> لیکن ${M('√'+c)} غیر ناطق ہے (پہلے ثابت ہو چکا)۔ <b class="hl">یہ ہمارے اس فرض کے خلاف ہے کہ ${M(E)} ناطق ہے۔</b>`,
+eRes:E=>`لہٰذا ${M(E)} <b>غیر ناطق</b> ہے۔`,
+m1:'دونوں ایک ساتھ شروع کرتے ہیں۔ وہ ایسے وقت پر دوبارہ نقطۂ آغاز پر ہوں گے جو دونوں اوقات کا ضعف ہو، اس لیے ہمیں LCM چاہیے۔',
+meet:l=>`وہ ${l} منٹ بعد دوبارہ نقطۂ آغاز پر ملیں گے۔`},
+p:[
+{name:'1 · بنیادی مسئلہ',title:'علمِ حساب کا بنیادی مسئلہ',tag:'ہر مرکب عدد کی مفرد اعداد میں ایک ہی منفرد شناخت ہے۔',
+key:'ہر مرکب عدد کو مفرد اعداد کے حاصلِ ضرب کے طور پر لکھا جا سکتا ہے، اور یہ تجزیہ ترتیب کے علاوہ منفرد ہے۔',
+facts:['فیکٹر ٹری سے تجزیہ کریں اور مفرد اعداد کو بڑھتی ترتیب میں لکھیں۔',`برابر مفرد اعداد کو طاقت میں جوڑیں: ${M('32760 = 2<sup>3</sup> × 3<sup>2</sup> × 5 × 7 × 13')}`,'ترتیب طے ہو جائے (بڑھتی ہوئی) تو تجزیہ منفرد ہوتا ہے۔','پہلا درست ثبوت کارل فریڈرک گاؤس نے دیا، جنہیں ‘ریاضی دانوں کا شہزادہ’ کہا جاتا ہے۔']},
+{name:'2 · عاداعظم اور ذواضعافِ اقل',title:'مفرد اجزائے ضربی سے عاداعظم اور ذواضعافِ اقل',tag:'عاداعظم کے لیے چھوٹی طاقتیں، ذواضعافِ اقل کے لیے بڑی طاقتیں۔',
+key:M('HCF(a, b) × LCM(a, b) = a × b'),
+facts:['عاداعظم (HCF) = ہر مشترک مفرد جزو کی سب سے چھوٹی طاقت کا حاصلِ ضرب۔','ذواضعافِ اقل (LCM) = شامل ہر مفرد جزو کی سب سے بڑی طاقت کا حاصلِ ضرب۔',`${M('HCF × LCM = a × b')}، لہٰذا ${M('LCM = (a × b) / HCF')}۔`,`مثال: ${M('HCF(96, 404) = 4')}، اس لیے LCM = 9696۔`]},
+{name:'3 · تین اعداد',title:'تین اعداد کا عاداعظم اور ذواضعافِ اقل',tag:'احتیاط: حاصلِ ضرب والا کلیہ تین اعداد پر لاگو نہیں ہوتا۔',
+key:'تین اعداد کے لیے HCF × LCM ان اعداد کے حاصلِ ضرب کے برابر نہیں ہوتا۔',
+facts:['وہی طریقہ: عاداعظم کے لیے مشترک مفرد اعداد کی چھوٹی طاقتیں، ذواضعافِ اقل کے لیے سب کی بڑی طاقتیں۔',`مثال: ${M('6 = 2 × 3, 72 = 2<sup>3</sup> × 3<sup>2</sup>, 120 = 2<sup>3</sup> × 3 × 5')}`,`${M('HCF(6, 72, 120) = 6')} اور ${M('LCM = 360')}۔`,`لیکن ${M('6 × 72 × 120 ≠ HCF × LCM')}۔`]},
+{name:'4 · کیا 0 پر ختم؟',title:'کیا bⁿ عدد 0 پر ختم ہو سکتا ہے؟',tag:'تجزیے میں مفرد عدد 5 تلاش کریں۔',
+key:'اگر bⁿ کا آخری ہندسہ 0 ہو تو وہ 10 = 2 × 5 سے تقسیم ہوتا ہے، اس لیے 2 اور 5 دونوں b کے مفرد اجزا ہوں۔',
+facts:[`مثال 1: ${M('4<sup>n</sup> = 2<sup>2n</sup>')}، یعنی صرف مفرد عدد 2۔`,'بنیادی مسئلے کی انفرادیت کی وجہ سے کوئی اور مفرد عدد نہیں آ سکتا۔',`لہٰذا ${M('4<sup>n</sup>')} کبھی 0 پر ختم نہیں ہوتا۔ اسی طرح ${M('6<sup>n</sup>')} (صرف 2 اور 3)۔`,'ڈبے میں b کی دوسری قیمتیں آزمائیں۔']},
+{name:'5 · غیر ناطق √p',title:'√p کا غیر ناطق ہونا',tag:'تضاد سے ثبوت، قدم بہ قدم۔',
+key:'مسئلہ 1.2: اگر مفرد عدد p، a² کو تقسیم کرے تو p، a کو بھی تقسیم کرتا ہے۔',
+facts:[`ثابت کریں کہ ${M('√2, √3, √5')} اور عموماً ${M('√p')} (p مفرد) غیر ناطق ہیں۔`,`فرض کریں ${M('√p = a/b')}، جہاں a اور b ہم اولیٰ ہیں، اور مسئلہ 1.2 دو بار استعمال کریں۔`,'a اور b دونوں کا p سے قابلِ تقسیم ہونا ‘ہم اولیٰ’ کے خلاف ہے۔','تضاد کا جملہ لازماً لکھیں۔']},
+{name:'6 · a + b√c قسم',title:'جمع، تفریق اور ضرب والی اقسام',tag:'جذر کو الگ کریں، تضاد دیکھیں۔',
+key:`${M('a + b√c')} کو غیر ناطق ثابت کرنے کے لیے اسے ناطق فرض کریں، ${M('√c')} الگ کریں، اور تضاد حاصل کریں۔`,
+facts:[`مثالیں 6 اور 7: ${M('5 − √3')} اور ${M('3√2')}۔ مشق: ${M('3 + 2√5, 7√5, 6 + √2')}۔`,`فرض کریں ${M('a + b√c = r')} (ناطق)۔`,`تب ${M('√c = (r − a)/b')} ناطق ہے، لیکن ${M('√c')} غیر ناطق ہے (پہلے ثابت ہو چکا)۔`,`${M('3√2')} کے لیے a = 0؛ ${M('5 − √3')} کے لیے a=5، b=-1، c=3 لکھیں۔`]},
+{name:'7 · ملاقات کا سوال',title:'وہ دوبارہ کب ملیں گے؟',tag:'دوبارہ ملنے کا وقت = اوقات کا ذواضعافِ اقل۔',
+key:'دو افراد ایک ساتھ ایک ہی راستے پر چلنا شروع کریں تو وہ اپنے اوقات کے ذواضعافِ اقل (LCM) کے بعد دوبارہ نقطۂ آغاز پر ملتے ہیں۔',
+facts:['سونیا ایک چکر 18 منٹ میں اور روی 12 منٹ میں لگاتا ہے۔','نقطۂ آغاز پر ملنے کے لیے ایسا وقت چاہیے جو دونوں اوقات کا ضعف ہو۔',`پہلا ایسا وقت ${M('LCM(18, 12) = 36')} منٹ ہے۔`,'اوقات (t1، t2) بدل کر دوبارہ آزمائیں۔']}
+]};
 
-let cur=0,tok=0;
+const IN=[[['n',32760]],[['a',96],['b',404]],[['a',6],['b',72],['c',120]],[['b',4]],[['p',2]],[['a',5],['b',-1],['c',3]],[['t1',18],['t2',12]]];
+const BD=[
+([n])=>{if(!okInt(n,4,1e7))return['!'+T.s.err4];if(isPrime(n))return['!'+T.s.prime(n)];
+ const o=[T.s.tree],pr=[];let c=n;while(c>1){let p=2;while(c%p)p++;const r=c/p;if(r>1)o.push(M(`${c} = ${p} × ${r}`));pr.push(p);c=r}
+ o.push(T.s.primes+' '+M(pr.join(' × ')));o.push('§'+M(`${n} = ${fmt(factor(n))}`));o.push(T.s.unique);return o},
+([a,b])=>{if(![a,b].every(x=>okInt(x,2,1e6)))return['!'+T.s.err2];const R=hl([a,b]);
+ return[chip(a,R.F[0]),chip(b,R.F[1]),hv(T,R),lv(T,R),`${T.s.chk} ${M(`${R.h} × ${R.l} = ${R.h*R.l} = ${a} × ${b}`)}`,`${T.s.viaH} ${M(`${a} × ${b} / ${R.h} = ${R.l}`)}`,res(T,R)]},
+([a,b,c])=>{if(![a,b,c].every(x=>okInt(x,2,1e4)))return['!'+T.s.err3];const R=hl([a,b,c]),P=a*b*c,Q=R.h*R.l;
+ return[chip(a,R.F[0]),chip(b,R.F[1]),chip(c,R.F[2]),hv(T,R),lv(T,R),
+ `${M(`${a} × ${b} × ${c} = ${P}`)}<br>${M(`HCF × LCM = ${R.h} × ${R.l} = ${Q}`)}<br>${P!=Q?T.s.prodNot:T.s.prodEq}`,res(T,R)]},
+([b])=>{if(!okInt(b,2,1e6))return['!'+T.s.err2];const f=factor(b),ks=Object.keys(f),h2=!!f[2],h5=!!f[5];
+ const sy=ks.map(p=>p+'<sup>'+(f[p]==1?'':f[p])+'n</sup>').join(' × ');
+ return[T.s.zeroIdea,M(`${b}<sup>n</sup> = (${fmt(f)})<sup>n</sup> = ${sy}`),`${T.s.onlyP} ${M(ks.join(', '))}`,T.s.uniq,'§'+(h2&&h5?T.s.can(b):T.s.never(b,h5?2:5))]},
+([p])=>{if(!isPrime(p))return['!'+T.s.prErr];return[...T.s.irr(p),'§'+T.s.irrRes(p)]},
+([a,b,c])=>{if(!isPrime(c)||!b||!Number.isInteger(a)||!Number.isInteger(b))return['!'+T.s.eErr];
+ const ab=Math.abs(b),E=(a?a+(b<0?' − ':' + '):(b<0?'−':''))+(ab==1?'':ab)+'√'+c;
+ const ra=a?`r ${a<0?'+':'−'} ${Math.abs(a)}`:'r',bt=(b==1?'':b==-1?'−':b)+'√'+c,bd=b<0?`(${b})`:b;
+ return[T.s.e1(E),T.s.e2(bt,ra,c,bd),T.s.e3(ra,bd,c),T.s.e4(E,c),'§'+T.s.eRes(E)]},
+([x,y])=>{if(![x,y].every(v=>okInt(v,2,1e4)))return['!'+T.s.err3];const R=hl([x,y]);
+ return[T.s.m1,chip(x,R.F[0]),chip(y,R.F[1]),lv(T,R),'§'+T.s.meet(M(R.l))]}
+];
+const POSTERS=T.p.map((p,i)=>({...p,inputs:IN[i],build:BD[i]}));
+const N=POSTERS.length;let cur=0,tok=0;
 const nav=$('#nav'),main=$('#main');
 POSTERS.forEach((P,i)=>{
  const b=document.createElement('button');b.textContent=P.name;b.onclick=()=>show(i);nav.appendChild(b);
  const s=document.createElement('section');s.className='poster';
  s.innerHTML=`<div><h1>${P.title}</h1><div class="tag">${P.tag}</div><ul class="facts">${P.facts.map(f=>`<li>${f}</li>`).join('')}</ul></div>
  <div><div class="ctl">${P.inputs.map(([n,v])=>`<label>${n}<input type="number" value="${v}"></label>`).join('')}
- <button class="go">چلائیں</button><button class="st">اگلا قدم</button><button class="rs">دوبارہ</button></div><div class="stage"></div></div>`;
+ <button class="go">${T.run}</button><button class="st">${T.step}</button><button class="rs">${T.reset}</button></div><div class="stage"></div></div>`;
  main.appendChild(s);P.el=s;P.stage=$('.stage',s);
  $('.go',s).onclick=()=>play();$('.st',s).onclick=()=>step();$('.rs',s).onclick=()=>{tok++;kids().forEach(k=>k.classList.remove('on'))};
  s.querySelectorAll('input').forEach(inp=>inp.addEventListener('keydown',e=>{e.stopPropagation();if(e.key==='Enter')play()}));
 });
 const kids=()=>[...POSTERS[cur].stage.children];
 function build(){const P=POSTERS[cur];const v=[...P.el.querySelectorAll('input')].map(i=>+i.value);
- P.stage.innerHTML=`<div class="key"><b>اہم نکتہ:</b> ${P.key}</div>`+P.build(v).map(h=>{const r=h[0]=='§',bad=h[0]=='!';return `<div class="${r?'result':bad?'bad':''}">${r||bad?h.slice(1):h}</div>`}).join('')}
+ P.stage.innerHTML=`<div class="key"><b>${T.keyLabel}</b> ${P.key}</div>`+P.build(v).map(h=>{const r=h[0]=='§',bad=h[0]=='!';return `<div class="${r?'result':bad?'bad':''}">${r||bad?h.slice(1):h}</div>`}).join('')}
 async function play(){build();const my=++tok;await sleep(300);for(const k of kids()){if(my!==tok)return;k.classList.add('on');await sleep(1800)}}
 function step(){tok++;let n=kids().find(k=>!k.classList.contains('on'));if(!n){build();n=kids()[0]}n.classList.add('on')}
 function show(i){tok++;cur=i;POSTERS.forEach((P,j)=>P.el.classList.toggle('on',j==i));[...nav.children].forEach((b,j)=>b.classList.toggle('on',j==i));play()}
+const RT=document.documentElement.dir=='rtl',NX=RT?'ArrowLeft':'ArrowRight',PV=RT?'ArrowRight':'ArrowLeft';
 document.addEventListener('keydown',e=>{
- if(e.key==='ArrowLeft')show((cur+1)%5);else if(e.key==='ArrowRight')show((cur+4)%5);
+ if(e.key===NX)show((cur+1)%N);else if(e.key===PV)show((cur+N-1)%N);
  else if(e.key===' '){e.preventDefault();play()}else if(e.key==='s'||e.key==='S')step();
  else if(e.key==='h'||e.key==='H')document.body.classList.toggle('clean')});
-show(Math.min(4,Math.max(0,(+location.hash.slice(1)||1)-1)));
+show(Math.min(N-1,Math.max(0,(+location.hash.slice(1)||1)-1)));
 </script>
 </body>
 </html>
